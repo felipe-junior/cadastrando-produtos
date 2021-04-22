@@ -1,0 +1,23 @@
+{
+  "name": "cadastrando-produtos",
+  "version": "1.0.0",
+  "description": "O front end faz uma requisição para adicionar os produtos, o backend escuta esta requisição e insere no banco de dados",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felipe-junior/cadastrando-produtos.git"
+  },
+  "author": "Felipe dos Santos",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/felipe-junior/cadastrando-produtos/issues"
+  },
+  "homepage": "https://github.com/felipe-junior/cadastrando-produtos#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
