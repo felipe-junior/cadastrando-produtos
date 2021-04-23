@@ -22,7 +22,7 @@ const Produtos = sequelize.define("produtos", {
 Produtos.sync()
 
 app.get("/adicionar", (req, res)=>{
-    res.sendFile("C:/Users/Felipe/Documents/copia/lixo/index.html")
+    res.sendFile("C:/Users/Felipe/Documents/copia/teste/index.html")
 })
 app.post("/adicionar", (req, res)=>{
 
