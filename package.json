@@ -19,6 +19,8 @@
   "homepage": "https://github.com/felipe-junior/cadastrando-produtos#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "mssql": "^6.3.1"
+    "mssql": "^6.3.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.6.2"
   }
 }

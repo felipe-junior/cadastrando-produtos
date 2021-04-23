@@ -1,18 +1,39 @@
 import express from 'express'
-import fs from 'fs'
-
-
 const app = express()
+import {Sequelize} from 'sequelize'
+
 const porta = 8080
-const index = fs.readFileSync("C:/Users/Felipe/Documents/NodeSql/aprendendo-node/index.html", "utf-8")
-//app.use(express.json())
+
 app.use(express.urlencoded({extended: true}))
+
+const sequelize = new Sequelize("produtosTestes", "root", "290520", {
+    host: "localhost",
+    dialect: "mysql"
+})
+
+sequelize.authenticate().then(() => console.log("Autenticado")).catch((razao ) =>console.log(razao))
+
+const Produtos = sequelize.define("produtos", {
+    nome: {type: Sequelize.TEXT},
+    quantidade: {type: Sequelize.INTEGER},
+    descricao: {type: Sequelize.STRING}
+})
+
+Produtos.sync()
+
 app.get("/adicionar", (req, res)=>{
-    res.send(index)
+    res.sendFile("C:/Users/Felipe/Documents/copia/lixo/index.html")
 })
 app.post("/adicionar", (req, res)=>{
-   console.log(req.body)
-   res.send(req.body)
+
+    console.log()
+
+    Produtos.create({
+       nome: req.body.produtoNome,
+       quantidade: req.body.quantidadeProduto,
+       descricao: req.body.descricao
+   })
+   res.redirect("/adicionar")
 })
 
 app.listen(porta, ()=>{
